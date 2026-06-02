@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Person 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI';
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+
+  /* DREAMY PINK PURPLE BACKGROUND */
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+}
+
+/* SECTION */
+.section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* BUTTON */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff4d6d,#ff7eb3);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px #ff7eb3;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.1);
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(255,255,255,0.3);
+}
+
+/* COVER */
+.cover{
+  width:250px;
+  border-radius:20px;
+  transform:rotate(-5deg);
+}
+
+/* SLIDER */
+.slider{
+  width:100%;
+  overflow:hidden;
+}
+
+.track{
+  display:flex;
+  animation:scroll 30s linear infinite;
+}
+
+.track img,.track video{
+  width:180px;
+  margin:10px;
+  border-radius:15px;
+  object-fit:cover;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* FINAL VIDEO FULL SCREEN */
+
+#finalVideo{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+
+/* FINAL TEXT */
+.overlay{
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  max-width:700px;
+}
+
+/* HEARTS */
+.heart{
+  position:fixed;
+  color:pink;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-100vh);}
+}
+
+.hidden{display:none;}
+#noBtn{position:absolute;}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="harreya.mp3">
+</audio>
+
+<!-- FLOATING HEARTS -->
+<script>
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.innerHTML="💖";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},400);
+</script>
+
+<!-- PAGE 1 -->
+<div id="p1" class="section">
+<div class="card">
+<img src="photo6.jpeg" class="cover">
+
+<h1>To My Favorite Person 💖</h1>
+<p>You are my soft place in this chaotic world ✨</p>
+
+<button onclick="start()">Start 💌</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="p2" class="section hidden">
+<h2>Can I keep you forever? 💖</h2>
+
+<button onclick="go3()">Always 💞</button>
+<button id="noBtn" onmouseover="moveNo()">Never 😭</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="p3" class="section hidden">
+<h2>Little Pieces of Us 📸✨</h2>
+
+<div class="slider">
+<div class="track">
+
+<img src="photo1.jpeg"><img src="photo2.jpeg"><img src="photo3.jpeg">
+<img src="photo4.jpeg"><img src="photo5.jpeg"><img src="photo6.jpeg">
+<img src="photo7.jpeg"><img src="photo8.jpeg"><img src="photo9.jpeg">
+<img src="photo10.jpeg"><img src="photo11.jpeg">
+
+<img src="photo1.jpeg"><img src="photo2.jpeg"><img src="photo3.jpeg">
+<img src="photo4.jpeg"><img src="photo5.jpeg"><img src="photo6.jpeg">
+<img src="photo7.jpeg"><img src="photo8.jpeg"><img src="photo9.jpeg">
+<img src="photo10.jpeg"><img src="photo11.jpeg">
+
+</div>
+</div>
+
+<button onclick="go4()">Next 💌</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="p4" class="section hidden">
+<h2>Moments That Feel Like Magic 🎥💖</h2>
+
+<div class="slider">
+<div class="track">
+
+<video autoplay muted loop playsinline><source src="video1.mp4"></video>
+<video autoplay muted loop playsinline><source src="video2.mp4"></video>
+<video autoplay muted loop playsinline><source src="video3.mp4"></video>
+<video autoplay muted loop playsinline><source src="video4.mp4"></video>
+<video autoplay muted loop playsinline><source src="video5.mp4"></video>
+<video autoplay muted loop playsinline><source src="video6.mp4"></video>
+<video autoplay muted loop playsinline><source src="video7.mp4"></video>
+<video autoplay muted loop playsinline><source src="video8.mp4"></video>
+<video autoplay muted loop playsinline><source src="video9.mp4"></video>
+<video autoplay muted loop playsinline><source src="video10.mp4"></video>
+<video autoplay muted loop playsinline><source src="video11.mp4"></video>
+
+</div>
+</div>
+
+<button onclick="go5()">Final 💖</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div id="p5" class="section hidden">
+
+<video id="finalVideo" autoplay muted loop playsinline>
+<source src="video2.mp4">
+</video>
+
+<div class="overlay">
+
+<h2>For You… Always 💌</h2>
+
+<p>
+My love…  
+
+I don’t even know how to put this into words,  
+because what I feel for you is something so deep,  
+so real, that words almost feel too small for it.  
+
+We’ve been through so much — the ups, the downs,  
+the moments where everything felt perfect,  
+and the moments where everything felt like it was falling apart.  
+
+But through all of it…  
+one thing never changed —  
+my love for you.  
+
+And getting you back…  
+is not just something small to me.  
+
+It is the biggest win of my life.  
+
+Because having you again means having my peace again,  
+my happiness again,  
+my safe place again.  
+
+You are not just someone I love…  
+you are the person my heart feels at home with.  
+
+No matter what happens in life,  
+no matter how hard things get…  
+
+I promise I will always choose you.  
+
+Every single time.  
+
+I love you more than you will ever truly understand ❤️  
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function start(){
+  music.play();
+  p1.classList.add("hidden");
+  p2.classList.remove("hidden");
+}
+
+function go3(){ p2.classList.add("hidden"); p3.classList.remove("hidden"); }
+function go4(){ p3.classList.add("hidden"); p4.classList.remove("hidden"); }
+function go5(){ p4.classList.add("hidden"); p5.classList.remove("hidden"); }
+
+function moveNo(){
+  noBtn.style.left=Math.random()*window.innerWidth+"px";
+  noBtn.style.top=Math.random()*window.innerHeight+"px";
+}
+
+</script>
+
+</body>
+</html>
