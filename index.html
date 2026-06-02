@@ -80,6 +80,7 @@ button{
   height:320px;
   object-fit:cover;
   border-radius:15px;
+  pointer-events:none; /* FIX */
 }
 
 /* FINAL VIDEO */
@@ -100,7 +101,6 @@ button{
   animation:fadeZoom 1.5s ease;
 }
 
-/* FADE + ZOOM */
 @keyframes fadeZoom{
   from{opacity:0; transform:scale(0.9);}
   to{opacity:1; transform:scale(1);}
@@ -126,7 +126,6 @@ button{
 <audio id="heartbeat" src="https://www.soundjay.com/heart/heartbeat-01a.mp3" loop></audio>
 
 <script>
-/* HEARTS */
 setInterval(()=>{
   let h=document.createElement("div");
   h.innerHTML="💖";
@@ -143,50 +142,35 @@ function playMusic(){
 
 <!-- PAGE 1 -->
 <div id="p1" class="section">
-
 <img src="photo6.jpeg" style="width:260px;border-radius:20px;">
-
 <h1>🎉 Happy Birthday Pajjuuuuu 💖</h1>
-
-<p>The universe made you… and gave you to me ✨</p>
-
+<p>The universe made you… and gave you to me to give a meaning to my life ✨</p>
 <button onclick="start()">Start 💌</button>
 </div>
 
 <!-- PAGE 2 -->
 <div id="p2" class="section hidden">
-
 <h2>Can I keep you forever? 💖</h2>
-
 <p>
 You are my peace… my happiness… my home ❤️  
 I will always choose you… again and again 💖
 </p>
-
 <button onclick="go3()">Always 💞</button>
 <button id="noBtn">Never 😭</button>
-
 </div>
 
 <!-- PAGE 3 -->
 <div id="p3" class="section hidden">
-
 <h2>Every Little Piece of Us 💞✨</h2>
-
-<p>
-These aren’t just photos… they’re pieces of my heart 💖  
-Every moment with you feels like magic ✨
-</p>
+<p>These aren’t just photos… they’re pieces of my heart 💖</p>
 
 <div style="overflow:hidden;width:100%;">
 <div class="slider">
-
 <img src="photo1.jpeg"><img src="photo2.jpeg"><img src="photo3.jpeg">
 <img src="photo4.jpeg"><img src="photo5.jpeg"><img src="photo6.jpeg">
 <img src="photo7.jpeg"><img src="photo8.jpeg"><img src="photo9.jpeg">
 <img src="photo10.jpeg"><img src="photo11.jpeg">
 <img src="photo1.jpeg"><img src="photo2.jpeg">
-
 </div>
 </div>
 
@@ -195,28 +179,22 @@ Every moment with you feels like magic ✨
 
 <!-- PAGE 4 -->
 <div id="p4" class="section hidden">
-
-<h2>Moments I Never Want to End 💫💖</h2>
-
-<p>
-If I could pause time… I would stay here with you forever 🥺  
-Every second with you feels special 💞
-</p>
+<h2>Moments I Never Want to End and want to keep forever💫💖</h2>
 
 <div style="overflow:hidden;width:100%;">
 <div class="slider">
 
-<video autoplay muted loop src="video1.mp4"></video>
-<video autoplay muted loop src="video2.mp4"></video>
-<video autoplay muted loop src="video3.mp4"></video>
-<video autoplay muted loop src="video4.mp4"></video>
-<video autoplay muted loop src="video5.mp4"></video>
-<video autoplay muted loop src="video6.mp4"></video>
-<video autoplay muted loop src="video7.mp4"></video>
-<video autoplay muted loop src="video8.mp4"></video>
-<video autoplay muted loop src="video9.mp4"></video>
-<video autoplay muted loop src="video10.mp4"></video>
-<video autoplay muted loop src="video11.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video1.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video2.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video3.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video4.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video5.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video6.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video7.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video8.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video9.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video10.mp4"></video>
+<video autoplay muted loop playsinline webkit-playsinline src="video11.mp4"></video>
 
 </div>
 </div>
@@ -226,8 +204,7 @@ Every second with you feels special 💞
 
 <!-- FINAL PAGE -->
 <div id="p5" class="section hidden">
-
-<video id="finalVideo" autoplay muted loop>
+<video id="finalVideo" autoplay muted loop playsinline webkit-playsinline>
 <source src="video2.mp4">
 </video>
 
@@ -235,7 +212,6 @@ Every second with you feels special 💞
 <h2>For You… Always 💌</h2>
 <p id="typingText"></p>
 </div>
-
 </div>
 
 <script>
@@ -244,13 +220,11 @@ function start(){
   p1.classList.add("hidden");
   p2.classList.remove("hidden");
 }
-
 function go3(){p2.classList.add("hidden");p3.classList.remove("hidden");}
 function go4(){p3.classList.add("hidden");p4.classList.remove("hidden");}
 function go5(){
   p4.classList.add("hidden");
   p5.classList.remove("hidden");
-
   document.getElementById("heartbeat").play();
   typeMessage();
 }
@@ -271,6 +245,7 @@ I don’t even know where to begin… because how do I put something so deep int
 
 Getting you back… wasn’t just a moment for me -it was everything. It felt like my whole world, which once felt incomplete, suddenly found its missing piece again. You are not just someone in my life… you are my peace, my comfort, my happiness, my safe place… my home ❤️  
 
+There were days when I missed you in ways I couldn’t even explain… where even the smallest things reminded me of you. And now that you’re here again… it feels unreal, like life gave me another chance to hold onto the one person I never wanted to lose.  
 You have this way of making everything better without even trying. Your smile calms my chaos, your voice feels like warmth, and your presence alone makes my world feel lighter. Being with you doesn’t just make me happy… it makes me feel complete in a way I never knew I needed.  
 
 No matter what happens… no matter how hard life gets… no matter how many ups and downs come our way - one thing will never change… and that is me choosing you. Again and again… every single time.  
