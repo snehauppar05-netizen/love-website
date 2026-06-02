@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For My Person 💖</title>
+<title>For My Pajjuuu 💖</title>
 
 <style>
 body{
@@ -9,10 +9,22 @@ body{
   font-family:'Segoe UI';
   color:white;
   text-align:center;
-  overflow-x:hidden;
+  overflow:hidden;
+  background:black;
+}
 
-  /* DREAMY PINK PURPLE BACKGROUND */
-  background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+/* GLOW TEXT */
+h1,h2{
+  text-shadow:0 0 15px #ff7eb3;
+}
+h1{font-size:45px;}
+h2{font-size:36px;}
+
+p{
+  font-size:20px;
+  max-width:700px;
+  color:#ffe4ec;
+  line-height:1.6;
 }
 
 /* SECTION */
@@ -26,105 +38,95 @@ body{
 
 /* BUTTON */
 button{
-  padding:12px 25px;
+  padding:14px 30px;
   border:none;
   border-radius:30px;
   background:linear-gradient(45deg,#ff4d6d,#ff7eb3);
   color:white;
-  font-size:16px;
+  font-size:18px;
   cursor:pointer;
-  box-shadow:0 0 20px #ff7eb3;
-  transition:0.3s;
-}
-button:hover{
-  transform:scale(1.1);
+  margin:10px;
+  box-shadow:0 0 15px #ff7eb3;
 }
 
-/* CARD */
-.card{
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(12px);
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 0 30px rgba(255,255,255,0.3);
+/* HEARTS */
+.heart{
+  position:fixed;
+  animation:float 6s linear infinite;
 }
-
-/* COVER */
-.cover{
-  width:250px;
-  border-radius:20px;
-  transform:rotate(-5deg);
+@keyframes float{
+  100%{transform:translateY(-100vh);}
 }
 
 /* SLIDER */
 .slider{
-  width:100%;
-  overflow:hidden;
-}
-
-.track{
   display:flex;
-  animation:scroll 30s linear infinite;
+  gap:20px;
+  width:max-content;
+  animation:move 15s linear infinite;
 }
-
-.track img,.track video{
-  width:180px;
-  margin:10px;
-  border-radius:15px;
-  object-fit:cover;
-}
-
-@keyframes scroll{
+@keyframes move{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
 }
 
-/* FINAL VIDEO FULL SCREEN */
+.slider img{
+  height:260px;
+  border-radius:15px;
+}
 
+.slider video{
+  width:230px;
+  height:320px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* FINAL VIDEO */
 #finalVideo{
   position:fixed;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   object-fit:cover;
   z-index:-1;
 }
 
-/* FINAL TEXT */
+/* TEXT BOX */
 .overlay{
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(15px);
-  padding:30px;
+  padding:40px;
   border-radius:20px;
-  max-width:700px;
+  max-width:850px;
+  animation:fadeZoom 1.5s ease;
 }
 
-/* HEARTS */
-.heart{
-  position:fixed;
-  color:pink;
-  animation:float 6s linear infinite;
+/* FADE + ZOOM */
+@keyframes fadeZoom{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
 }
-@keyframes float{
-  0%{transform:translateY(0);}
-  100%{transform:translateY(-100vh);}
+
+/* TYPING CURSOR */
+#typingText::after{
+  content:"|";
+  animation:blink 1s infinite;
+}
+@keyframes blink{
+  0%,100%{opacity:1;}
+  50%{opacity:0;}
 }
 
 .hidden{display:none;}
-#noBtn{position:absolute;}
-
 </style>
 </head>
 
 <body>
 
-<audio id="music" loop>
-  <source src="harreya.mp3">
-</audio>
+<audio id="music" src="harreya.mp3" loop></audio>
+<audio id="heartbeat" src="https://www.soundjay.com/heart/heartbeat-01a.mp3" loop></audio>
 
-<!-- FLOATING HEARTS -->
 <script>
+/* HEARTS */
 setInterval(()=>{
   let h=document.createElement("div");
   h.innerHTML="💖";
@@ -132,45 +134,58 @@ setInterval(()=>{
   h.style.left=Math.random()*100+"vw";
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),6000);
-},400);
+},300);
+
+function playMusic(){
+  document.getElementById("music").play();
+}
 </script>
 
 <!-- PAGE 1 -->
 <div id="p1" class="section">
-<div class="card">
-<img src="photo6.jpeg" class="cover">
 
-<h1>To My Favorite Person 💖</h1>
-<p>You are my soft place in this chaotic world ✨</p>
+<img src="photo6.jpeg" style="width:260px;border-radius:20px;">
+
+<h1>🎉 Happy Birthday Pajjuuuuu 💖</h1>
+
+<p>The universe made you… and gave you to me ✨</p>
 
 <button onclick="start()">Start 💌</button>
-</div>
 </div>
 
 <!-- PAGE 2 -->
 <div id="p2" class="section hidden">
+
 <h2>Can I keep you forever? 💖</h2>
 
+<p>
+You are my peace… my happiness… my home ❤️  
+I will always choose you… again and again 💖
+</p>
+
 <button onclick="go3()">Always 💞</button>
-<button id="noBtn" onmouseover="moveNo()">Never 😭</button>
+<button id="noBtn">Never 😭</button>
+
 </div>
 
 <!-- PAGE 3 -->
 <div id="p3" class="section hidden">
-<h2>Little Pieces of Us 📸✨</h2>
 
+<h2>Every Little Piece of Us 💞✨</h2>
+
+<p>
+These aren’t just photos… they’re pieces of my heart 💖  
+Every moment with you feels like magic ✨
+</p>
+
+<div style="overflow:hidden;width:100%;">
 <div class="slider">
-<div class="track">
 
 <img src="photo1.jpeg"><img src="photo2.jpeg"><img src="photo3.jpeg">
 <img src="photo4.jpeg"><img src="photo5.jpeg"><img src="photo6.jpeg">
 <img src="photo7.jpeg"><img src="photo8.jpeg"><img src="photo9.jpeg">
 <img src="photo10.jpeg"><img src="photo11.jpeg">
-
-<img src="photo1.jpeg"><img src="photo2.jpeg"><img src="photo3.jpeg">
-<img src="photo4.jpeg"><img src="photo5.jpeg"><img src="photo6.jpeg">
-<img src="photo7.jpeg"><img src="photo8.jpeg"><img src="photo9.jpeg">
-<img src="photo10.jpeg"><img src="photo11.jpeg">
+<img src="photo1.jpeg"><img src="photo2.jpeg">
 
 </div>
 </div>
@@ -180,22 +195,28 @@ setInterval(()=>{
 
 <!-- PAGE 4 -->
 <div id="p4" class="section hidden">
-<h2>Moments That Feel Like Magic 🎥💖</h2>
 
+<h2>Moments I Never Want to End 💫💖</h2>
+
+<p>
+If I could pause time… I would stay here with you forever 🥺  
+Every second with you feels special 💞
+</p>
+
+<div style="overflow:hidden;width:100%;">
 <div class="slider">
-<div class="track">
 
-<video autoplay muted loop playsinline><source src="video1.mp4"></video>
-<video autoplay muted loop playsinline><source src="video2.mp4"></video>
-<video autoplay muted loop playsinline><source src="video3.mp4"></video>
-<video autoplay muted loop playsinline><source src="video4.mp4"></video>
-<video autoplay muted loop playsinline><source src="video5.mp4"></video>
-<video autoplay muted loop playsinline><source src="video6.mp4"></video>
-<video autoplay muted loop playsinline><source src="video7.mp4"></video>
-<video autoplay muted loop playsinline><source src="video8.mp4"></video>
-<video autoplay muted loop playsinline><source src="video9.mp4"></video>
-<video autoplay muted loop playsinline><source src="video10.mp4"></video>
-<video autoplay muted loop playsinline><source src="video11.mp4"></video>
+<video autoplay muted loop src="video1.mp4"></video>
+<video autoplay muted loop src="video2.mp4"></video>
+<video autoplay muted loop src="video3.mp4"></video>
+<video autoplay muted loop src="video4.mp4"></video>
+<video autoplay muted loop src="video5.mp4"></video>
+<video autoplay muted loop src="video6.mp4"></video>
+<video autoplay muted loop src="video7.mp4"></video>
+<video autoplay muted loop src="video8.mp4"></video>
+<video autoplay muted loop src="video9.mp4"></video>
+<video autoplay muted loop src="video10.mp4"></video>
+<video autoplay muted loop src="video11.mp4"></video>
 
 </div>
 </div>
@@ -206,72 +227,86 @@ setInterval(()=>{
 <!-- FINAL PAGE -->
 <div id="p5" class="section hidden">
 
-<video id="finalVideo" autoplay muted loop playsinline>
+<video id="finalVideo" autoplay muted loop>
 <source src="video2.mp4">
 </video>
 
 <div class="overlay">
-
 <h2>For You… Always 💌</h2>
-
-<p>
-My love…  
-
-I don’t even know how to put this into words,  
-because what I feel for you is something so deep,  
-so real, that words almost feel too small for it.  
-
-We’ve been through so much — the ups, the downs,  
-the moments where everything felt perfect,  
-and the moments where everything felt like it was falling apart.  
-
-But through all of it…  
-one thing never changed —  
-my love for you.  
-
-And getting you back…  
-is not just something small to me.  
-
-It is the biggest win of my life.  
-
-Because having you again means having my peace again,  
-my happiness again,  
-my safe place again.  
-
-You are not just someone I love…  
-you are the person my heart feels at home with.  
-
-No matter what happens in life,  
-no matter how hard things get…  
-
-I promise I will always choose you.  
-
-Every single time.  
-
-I love you more than you will ever truly understand ❤️  
-</p>
-
+<p id="typingText"></p>
 </div>
 
 </div>
 
 <script>
-
 function start(){
-  music.play();
+  playMusic();
   p1.classList.add("hidden");
   p2.classList.remove("hidden");
 }
 
-function go3(){ p2.classList.add("hidden"); p3.classList.remove("hidden"); }
-function go4(){ p3.classList.add("hidden"); p4.classList.remove("hidden"); }
-function go5(){ p4.classList.add("hidden"); p5.classList.remove("hidden"); }
+function go3(){p2.classList.add("hidden");p3.classList.remove("hidden");}
+function go4(){p3.classList.add("hidden");p4.classList.remove("hidden");}
+function go5(){
+  p4.classList.add("hidden");
+  p5.classList.remove("hidden");
 
-function moveNo(){
-  noBtn.style.left=Math.random()*window.innerWidth+"px";
-  noBtn.style.top=Math.random()*window.innerHeight+"px";
+  document.getElementById("heartbeat").play();
+  typeMessage();
 }
 
+/* NEVER BUTTON */
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  noBtn.style.position="fixed";
+  noBtn.style.left=Math.random()*80+"vw";
+  noBtn.style.top=Math.random()*80+"vh";
+});
+
+/* TYPING */
+function typeMessage(){
+const text = `My love…   
+
+I don’t even know where to begin… because how do I put something so deep into words?  
+
+Getting you back… wasn’t just a moment for me -it was everything. It felt like my whole world, which once felt incomplete, suddenly found its missing piece again. You are not just someone in my life… you are my peace, my comfort, my happiness, my safe place… my home ❤️  
+
+You have this way of making everything better without even trying. Your smile calms my chaos, your voice feels like warmth, and your presence alone makes my world feel lighter. Being with you doesn’t just make me happy… it makes me feel complete in a way I never knew I needed.  
+
+No matter what happens… no matter how hard life gets… no matter how many ups and downs come our way - one thing will never change… and that is me choosing you. Again and again… every single time.  
+
+Not just today. Not just on your birthday.  
+
+But in every moment… every phase… every lifetime.  
+If I had to live my life all over again…  
+I would still find you…  
+
+I would still choose you…  
+
+and I would still fall for you…  
+
+over and over again… forever 💖  
+
+There was a time when I thought I lost you forever…  
+
+and that feeling broke me in ways I can’t explain.  
+But somehow life gave me another chance…  
+and brought you back to me.  
+Getting you back is not just happiness…  
+it’s everything.  
+
+I LOVEEEEEEEE YOUUUUUU BACCHAAAAA 😭💖🥺❤️✨💞💘`;
+
+let i=0;
+function typing(){
+  if(i<text.length){
+    document.getElementById("typingText").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing,30);
+  }
+}
+typing();
+}
 </script>
 
 </body>
